@@ -1,0 +1,33 @@
+<ion-view title="Profile" ng-init="init()">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-avatar">
+                <img ng-src="{{profileData.picture.data.url}}">
+                <h2>{{profileData.name}}</h2>
+                <p>{{profileData.id}}</p>
+            </div>
+            <!--<a href="#" class="item item-icon-left" ng-repeat = "data in profileData">
+                {{data}}
+            </a>-->
+			<button class="button" ng-click = "postFB()">Post with tags</button>
+			<a href="#" class="item item-icon-left">
+                Language {{profileData.locale}}
+            </a>
+			<a href="#" class="item item-icon-left">
+                Gender {{profileData.gender}}
+            </a>
+			<a href="#" class="item item-icon-left">
+                Hometown {{profileData.hometown.name}}
+            </a>
+			<a href="#" class="item item-icon-left">
+                Birthday {{profileData.birthday}}
+            </a>
+			<a href="#" class="item item-icon-left" ng-repeat = "friends in profileData.taggable_friends.data">
+				<img ng-src="{{friends.picture.data.url}}">
+				<h2>{{friends.name}}</h2>
+                <p>{{friends.id}}</p>
+            </a>
+			
+        </div>
+    </ion-content>
+</ion-view>
